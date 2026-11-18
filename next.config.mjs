@@ -1,8 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  reactStrictMode: true,
+  cacheComponents: false,
+  partialPrefetching: false,
+  async headers() {
+    return [
+      {
+        source: '/pay/:path*',
+        headers: [
+          {
+            key: 'Referrer-Policy',
+            value: 'no-referrer',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

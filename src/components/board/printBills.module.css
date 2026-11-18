@@ -1,0 +1,98 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bill {
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #d5d5d5;
+  padding: 1.5rem;
+}
+
+.stack > .bill {
+  break-before: page;
+  page-break-before: always;
+}
+
+.stack > .bill:first-child {
+  break-before: auto;
+  page-break-before: auto;
+}
+
+.screenOnly {
+  display: contents;
+}
+
+.singleBill {
+  display: none;
+}
+
+.billHeader {
+  break-after: avoid;
+  page-break-after: avoid;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.line {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.qr {
+  width: 1.6in;
+  height: 1.6in;
+}
+
+.payIntro {
+  margin-top: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.payUrl {
+  margin: 0;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+}
+
+@media print {
+  .toolbar {
+    display: none;
+  }
+
+  .stack {
+    gap: 0;
+  }
+
+  .bill {
+    border: none;
+    padding: 0;
+  }
+
+  .screenOnly {
+    display: none !important;
+  }
+
+  .singleBill {
+    display: block;
+  }
+}
