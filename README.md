@@ -122,6 +122,7 @@ There is no self-serve reset yet. The president needs to keep that password some
 - Which offices besides president exist, and whether any of them need permissions of their own. Secretary and treasurer are labels.
 - Confirm the address fields (street and lot) and the current dues amount. Those fields are a guess.
 - Default legal jargon on the bills.
+- Where is stripe's 2.9% fee going? We can look into cheaper PPs, factoring it into dues, etc.
 
 ## Todo
 
